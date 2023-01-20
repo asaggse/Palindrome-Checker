@@ -1,21 +1,24 @@
-// function print() {
-//     let str = document.getElementById("text").value;
-//     document.getElementById("display").innerText = str + " è una parola palindroma";
-// }
+function checkPalindrome() {
+    var word = document.getElementById("input").value;
+    var cleanWord = word.replace(/\s/g, '');
+    var result = document.getElementById("result");
 
+    if (!word) {
+        result.innerHTML = "";
+        return;
+    }
 
-function palindromeChecker() {
-    let str = document.getElementById("text").value;
-    const regex = "/[\W_]g";
+    var reversedWord = cleanWord.split('').reverse().join('');
 
-    let regexStr = str.toLowerCase().replace(regex, "");
-    
-    let reversed = regexStr.split("").reverse().join("");
-    if (str === "") {
-        document.getElementById("display").innerText = "Write Something";
-    } else if (reversed === regexStr) {
-        document.getElementById("display").innerText = str + " it's a palindrome";
+    if (cleanWord === reversedWord) {
+        result.innerHTML = "The word is a palindrome!";
     } else {
-        document.getElementById("display").innerText = regexStr + " it isn't a palindrome";
+        result.innerHTML = "The word is not a palindrome.";
     }
 }
+document.getElementById("input").addEventListener("keyup", function (event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("check-button").click();
+    }
+});
