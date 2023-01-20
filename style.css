@@ -1,0 +1,55 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #d4d7f5;
+}
+
+header {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.description {
+    margin-top: 50px;
+    text-align: center;
+}
+
+h1 {
+    cursor: default;
+}
+
+input {
+    margin: 20px 0;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+#title, #result {
+    /* padding-top: 25px; */
+    font-size: 30px;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 25px;
+}
